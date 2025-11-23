@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-function ContactForm(){
+function PreorderForm(){
     const [Name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -89,4 +89,4 @@ function ContactForm(){
         </div>
   );
 }
-export default ContactForm;
+export default PreorderForm;
