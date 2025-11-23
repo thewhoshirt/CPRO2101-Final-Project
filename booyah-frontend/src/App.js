@@ -9,6 +9,7 @@ import {
 import Home from './pages';
 import Contact from './pages/contact';
 import About from './pages/about.js';
+// import Pre-Order from ''
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
+        {/* <Route path='/per-order' element={<Pre-Order/>}/> */}
 
       </Routes>
     </Router>
