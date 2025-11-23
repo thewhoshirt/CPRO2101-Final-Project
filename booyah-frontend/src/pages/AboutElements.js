@@ -1,0 +1,52 @@
+import styled from "styled-components";
+
+export const body = styled.body`
+
+    text-align:center;
+    background-color: #FCFAF2;
+    position: relative;
+
+`
+// .booyah-logo{
+//     width: 20%;
+// }
+
+// .heading{
+//     display: flex;
+//     justify-content: space-evenly;
+//     align-items: center;
+//     margin-bottom: 5%;
+//     margin-left: 3%;
+//     width: 90%;
+// }
+
+
+// .pink-heading{
+//     color: #FF5FBE;
+//     padding: 10px;
+// }
+
+// .intro-text{
+//     background-color: #C9F2DE;
+//     padding: 2%;
+//     border:solid black 2px;
+// }
+
+// .image{
+//     width:50%;
+//     height:100%;
+//     border: solid black 2px;
+// }
+
+// .pillars-div, .purpose-div{
+//     height:fit-content;
+//     display: flex;
+//     justify-content: center;
+// }
+
+// .about-pillars, .about-purpose{
+//     padding:5%;
+//     border: solid black 2px;
+// }
+
+
