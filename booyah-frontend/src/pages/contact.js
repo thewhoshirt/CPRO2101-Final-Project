@@ -12,6 +12,7 @@ const Contact = () => {
             phone,
             notes
         );
+        alert(`Thank you for contacting us ${Name}!`)
     };
     const handleReset = () => {
         setName("");

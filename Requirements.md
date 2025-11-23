@@ -13,7 +13,7 @@
 ## About/Our Story - Janelle 
 - [x] Short story about Booyah Bagels (our process, ingredients, and values).
 ## Contact page
-- [ ] Basic contact form, address, hours, and links to our social media.
+- [x] Basic contact form, address, hours, and links to our social media.
 # Optional
 - [ ] Merch page if time
 - [ ] Mobile-friendly layout
