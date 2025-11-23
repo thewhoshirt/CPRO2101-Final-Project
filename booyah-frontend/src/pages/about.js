@@ -12,7 +12,7 @@ import {
     AboutPurpose,
     PillarsDiv,
     AboutPillars
-} from "./AboutElements";
+} from "../styles/AboutElements";
 
 const About = () => {
     return(
