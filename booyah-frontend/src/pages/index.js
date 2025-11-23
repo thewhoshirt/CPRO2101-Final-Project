@@ -2,7 +2,12 @@ import React from "react";
 
 const Home = () => {
    return( 
-    <div>
+    <div  style={{
+        display: 'flex',
+        justifyContent: 'centre',
+        alignItems: 'centre',
+        height: '100vh'
+      }}>
         <h1>Booyah Bagels... Home?</h1>
     </div>
    );

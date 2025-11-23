@@ -9,14 +9,17 @@ import{
 } from "./NavbarElements";
 
 const Navbar = () => {
-    <>
-        <Nav>
-            <Bars />
-                <NavMenu>
-                    <NavLink to="/contact">Contact</NavLink>    
-                </NavMenu>            
-        </Nav>
-    </>
+    return (
+        <>
+            <Nav>
+                <Bars />
+                    <NavMenu>
+                        <NavLink to='/'>Home</NavLink>
+                        <NavLink to="/contact">Contact</NavLink>    
+                    </NavMenu>            
+            </Nav>
+        </>
+    )
 }
 
 export default Navbar;
