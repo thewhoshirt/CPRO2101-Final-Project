@@ -10,10 +10,6 @@ import Home from './pages';
 import Contact from './pages/contact';
 import About from './pages/about.js';
 
-
-
-
-
 function App() {
   return (
     <Router>
@@ -26,11 +22,6 @@ function App() {
       </Routes>
     </Router>
 
-    // <div className="App">
-    //   <header className="App-header">
-    //     <h1>Booyah Bagels</h1>
-    //     </header>
-    // </div>
   );
 }
 
