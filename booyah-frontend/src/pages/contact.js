@@ -82,9 +82,9 @@ const Contact = () => {
                     <p>SUN - 9AM - 3PM</p>
                     <p>----------------------</p>
                     <a href="mailto:HELLO@BOOYAHBAGELS.CA"><p>HELLO@BOOYAHBAGELS.CA</p></a>
-                    <a href="https://www.facebook.com/people/Booyah-Bagels/100091819339135/"><img src='../../public/Facebook.avif' alt="facebookLogo"/></a>
-                    <a href="https://www.instagram.com/booyahbagels/"><img src='../../public/Instagram.avif' alt="instagramLogo"/></a>
-                    <a href="https://www.tiktok.com/@booyahbagels"><img src='../../public/TikTok.avif' alt="tiktokLogo"/></a>
+                    <a href="https://www.facebook.com/people/Booyah-Bagels/100091819339135/"><img src='/Facebook.avif' alt="facebook Logo"/></a>
+                    <a href="https://www.instagram.com/booyahbagels/"><img src='/Instagram.avif' alt="instagram Logo"/></a>
+                    <a href="https://www.tiktok.com/@booyahbagels"><img src='/TikTok.avif' alt="tiktok Logo"/></a>
                 </div>
                 <div>
                     <p>#180 - 5441 45 ST | RED DEER, AB | T4N 1L2</p>
