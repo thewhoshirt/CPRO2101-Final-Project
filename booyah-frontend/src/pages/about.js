@@ -1,4 +1,3 @@
-// import '../../public/styles/about.css';
 import React from 'react';
 import {
     BodyContainer,
