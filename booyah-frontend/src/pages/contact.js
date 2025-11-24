@@ -1,4 +1,12 @@
 import React, { useState } from "react"
+import {
+    BodyContainer,
+    SocialLogos,
+    HourHeaderMain,
+    HourHeaderSec,
+    Hours,
+    Separator,
+} from "../styles/ContactElements";
 const Contact = () => {
     const [Name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -21,7 +29,7 @@ const Contact = () => {
         setNotes("");
     };
     return(
-        <div>
+        <BodyContainer>
             <h1>Contact Page</h1>
             <div>
                 <form>
@@ -35,6 +43,7 @@ const Contact = () => {
                          placeholder="Name"
                          required
                      />
+                     <br/>
                      <label for="email">Email* </label>
                      <input
                          type="email"
@@ -45,6 +54,7 @@ const Contact = () => {
                          placeholder="Email"
                          required
                      />
+                     <br/>
                      <label for="phone">Phone*</label>
                      <input
                          type="tel"
@@ -55,6 +65,7 @@ const Contact = () => {
                          placeholder="Phone"
                          required
                      />
+                     <br/>
                      <label for="notes">Notes</label>
                      <textarea
                          type="text"
@@ -65,32 +76,41 @@ const Contact = () => {
                          placeholder='Notes'
                          required
                      />
-                     <button type="reset" value="reset" onClick={() => handleReset()} > Reset </button>
+                     <br/>
                      <button type="submit" value="Submit" onClick={(e) => handleSubmit(e)} > Submit </button>
+                     <button type="reset" value="reset" onClick={() => handleReset()} > Reset </button>
                 </form>
             </div>
             <div>
                 <div>
-                    <h2>HOURS</h2>
-                    <h3>UNLESS SOLD OUT</h3>
-                    <p>MON - 7AM - 2PM</p>
-                    <p>TUES - CLOSED</p>
-                    <p>WED - 7AM - 2PM</p>
-                    <p>THURS - 7AM - 2PM</p>
-                    <p>FRI - 7AM - 2PM</p>
-                    <p>SAT - 9AM - 3PM</p>
-                    <p>SUN - 9AM - 3PM</p>
-                    <p>----------------------</p>
+                    <HourHeaderMain>
+                        <h2>HOURS</h2>
+                    </HourHeaderMain>
+                    <HourHeaderSec>
+                        <h3>UNLESS SOLD OUT</h3>
+                    </HourHeaderSec>
+                    <Hours>
+                         <p>MON - 7AM - 2PM</p>
+                         <p>TUES - CLOSED</p>
+                         <p>WED - 7AM - 2PM</p>
+                         <p>THURS - 7AM - 2PM</p>
+                         <p>FRI - 7AM - 2PM</p>
+                         <p>SAT - 9AM - 3PM</p>
+                         <p>SUN - 9AM - 3PM</p>
+                    </Hours>
+                    <Separator>
+                        <h2>----------------------</h2>
+                    </Separator>
                     <a href="mailto:HELLO@BOOYAHBAGELS.CA"><p>HELLO@BOOYAHBAGELS.CA</p></a>
-                    <a href="https://www.facebook.com/people/Booyah-Bagels/100091819339135/"><img src='/Facebook.avif' alt="facebook Logo"/></a>
-                    <a href="https://www.instagram.com/booyahbagels/"><img src='/Instagram.avif' alt="instagram Logo"/></a>
-                    <a href="https://www.tiktok.com/@booyahbagels"><img src='/TikTok.avif' alt="tiktok Logo"/></a>
+                    <a href="https://www.facebook.com/people/Booyah-Bagels/100091819339135/"><SocialLogos src='/Facebook.avif' alt="facebook Logo"/></a>
+                     <a href="https://www.instagram.com/booyahbagels/"><SocialLogos src='/Instagram.avif' alt="instagram Logo"/></a>
+                     <a href="https://www.tiktok.com/@booyahbagels"><SocialLogos src='/TikTok.avif' alt="tiktok Logo"/></a>
                 </div>
                 <div>
                     <p>#180 - 5441 45 ST | RED DEER, AB | T4N 1L2</p>
                 </div>
             </div>
-        </div>
+        </BodyContainer>
     )
 }
 export default Contact;
