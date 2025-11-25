@@ -1,6 +1,7 @@
 import {FaBars} from "react-icons/fa6";
 import{NavLink as Link} from "react-router-dom";
 import styled from "styled-components";
+import React, {useState} from "react";
 
 export const Nav = styled.nav`
     background: #63d471;
@@ -38,6 +39,21 @@ export const Bars = styled(FaBars)`
         font-size: 1.8rem;
         cursor: pointer;
     }
+    @media screen and (max-width: 768px){
+    &.active{
+        display: flex;
+        flex-direction: column;
+        width: 100%
+        position: absolute;
+        top: 85px;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        background: #63d471;    
+        }
+    }
+  
+   
 `;
 
 export const NavMenu = styled.div`
@@ -57,7 +73,7 @@ export const NavMenu = styled.div`
 export const NavBtn = styled.nav`
     display: flex;
     align-items: center;
-    margin-right: 24px;
+https://www.youtube.com/watch?v=XQCuew98W4k    margin-right: 24px;
     /* Third Nav */
     /* justify-content: flex-end;
   width: 100vw; */
@@ -84,3 +100,4 @@ export const NavBtnLink = styled(Link)`
         color: #808080;
     }
 `;
+
