@@ -11,9 +11,7 @@ const seedDatabase = async () => {
     console.log(`Inserted ${created.length} products`);
   } catch (err) {
     console.error('Seeding failed:', err);
-  } finally {
-    process.exit();
-  }
+  } 
 };
 if (require.main === module) {
   seedDatabase();
