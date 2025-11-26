@@ -1,19 +1,19 @@
-import {FaBars} from "react-icons/fa6";
-import{NavLink as Link} from "react-router-dom";
+import { FaBars } from "react-icons/fa";
+import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
-import React, {useState} from "react";
 
+//nav bar 
 export const Nav = styled.nav`
-    background: #63d471;
+    background: #CB85F9;
     height: 85px;
     display: flex;
     justify-content: space-between;
     padding: 0.2rem calc((100vw - 1000px) / 2);
-    z-index: 12;
-    /* Third Nav */
-    /* justify-content: flex-start; */
+    z-index: 2;
+    position: sticky;
+    top: 0;
 `;
-
+//links in nav bar
 export const NavLink = styled(Link)`
     color: #808080;
     display: flex;
@@ -26,10 +26,10 @@ export const NavLink = styled(Link)`
         color: #000000;
     }
 `;
-
+// burger menu lines 
 export const Bars = styled(FaBars)`
     display: none;
-    color: #808080;
+    color: #ce8282ff;
     @media screen and (max-width: 768px) {
         display: block;
         position: absolute;
@@ -39,44 +39,47 @@ export const Bars = styled(FaBars)`
         font-size: 1.8rem;
         cursor: pointer;
     }
-    @media screen and (max-width: 768px){
-    &.active{
-        display: flex;
-        flex-direction: column;
-        width: 100%
-        position: absolute;
-        top: 85px;
-        left: 0;
-        opacity: 1;
-        transition: all 0.5s ease;
-        background: #63d471;    
-        }
-    }
-  
-   
 `;
 
 export const NavMenu = styled.div`
     display: flex;
     align-items: center;
     margin-right: -24px;
-    /* Second Nav */
-    /* margin-right: 24px; */
-    /* Third Nav */
-    /* width: 100vw;
-  white-space: nowrap; */
+    position: relative;
     @media screen and (max-width: 768px) {
-        display: none;
+        display: none; 
+        /* desktop menu hidden on small screens */
+    }
+    
+`;
+
+/* Secondary mobile menu shown when burger is toggled */
+export const MobileMenu = styled.div`
+    display: none;
+    @media screen and (max-width: 768px) {
+        &.active {
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+            position: absolute;
+            top: 85px;
+            right: 0;
+            opacity: 1;
+            transition: all 0.25s ease-in-out;
+            background: #CB85F9;
+            padding: 1rem 0;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 1;
+
+        }
     }
 `;
 
 export const NavBtn = styled.nav`
     display: flex;
     align-items: center;
-https://www.youtube.com/watch?v=XQCuew98W4k    margin-right: 24px;
-    /* Third Nav */
-    /* justify-content: flex-end;
-  width: 100vw; */
+    margin-right: 24px;
     @media screen and (max-width: 768px) {
         display: none;
     }
@@ -92,7 +95,6 @@ export const NavBtnLink = styled(Link)`
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
-    /* Second Nav */
     margin-left: 24px;
     &:hover {
         transition: all 0.2s ease-in-out;
