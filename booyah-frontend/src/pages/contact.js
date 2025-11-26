@@ -6,7 +6,12 @@ import {
     HourHeaderSec,
     Hours,
     Separator,
+    FormBody,
+    Input,
+    TextArea,
+    BooyahLogo,
 } from "../styles/ContactElements";
+import { Form } from "react-router-dom";
 const Contact = () => {
     const [Name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -30,11 +35,11 @@ const Contact = () => {
     };
     return(
         <BodyContainer>
-            <h1>Contact Page</h1>
-            <div>
+            <BooyahLogo src="Booyah Assets/Logo Horizontal/Bi-Color/Web/BooyahBagels-Logo-Horizontal-Windbreaker and pretty in pink.png" alt="Booyah Logo"/>
+            <FormBody>
+            <h1>Contact</h1>
                 <form>
-                     <label for="name">Name* </label>
-                     <input
+                     <Input
                          type="text"
                          name="name"
                          id="name"
@@ -44,8 +49,7 @@ const Contact = () => {
                          required
                      />
                      <br/>
-                     <label for="email">Email* </label>
-                     <input
+                     <Input
                          type="email"
                          name="email"
                          id="email"
@@ -55,8 +59,7 @@ const Contact = () => {
                          required
                      />
                      <br/>
-                     <label for="phone">Phone*</label>
-                     <input
+                     <Input
                          type="tel"
                          name="phone"
                          id="phone"
@@ -66,8 +69,7 @@ const Contact = () => {
                          required
                      />
                      <br/>
-                     <label for="notes">Notes</label>
-                     <textarea
+                     <TextArea
                          type="text"
                          name="notes"
                          id="notes"
@@ -80,7 +82,7 @@ const Contact = () => {
                      <button type="submit" value="Submit" onClick={(e) => handleSubmit(e)} > Submit </button>
                      <button type="reset" value="reset" onClick={() => handleReset()} > Reset </button>
                 </form>
-            </div>
+            </FormBody>
             <div>
                 <div>
                     <HourHeaderMain>
