@@ -5,7 +5,7 @@ export const BodyContainer = styled.div`
     position: relative;
 `;
 export const SocialLogos = styled.img`
-    width: 2%;
+    width: 5%;
     margin-right: 5px;
 `
 export const HourHeaderMain = styled.div`
@@ -14,8 +14,8 @@ export const HourHeaderMain = styled.div`
 export const HourHeaderSec = styled.div`
     color: black;
     background-color: #1dccbb;
-    width: 10%;
-    margin-left: 45%
+    width: 25%;
+    margin: 0 auto;
 `
 export const Hours = styled.div`
     font-weight: bold;
@@ -52,4 +52,20 @@ export const TextArea = styled.textarea`
 `
 export const BooyahLogo = styled.img`
     width: 35%;
-`;
+`
+export const Info = styled.div`
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+`
+export const Address = styled.p`
+    color: #2057e2;
+`
+export const InfoHours = styled.div`
+    width: 50%;
+    margin: 0 auto;
+`
+export const InfoLoc = styled.div`
+    width: 50%;
+    margin: 0 auto;
+`

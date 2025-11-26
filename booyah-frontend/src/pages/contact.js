@@ -10,6 +10,10 @@ import {
     Input,
     TextArea,
     BooyahLogo,
+    Info,
+    Address,
+    InfoHours,
+    InfoLoc,
 } from "../styles/ContactElements";
 import { Form } from "react-router-dom";
 const Contact = () => {
@@ -84,8 +88,8 @@ const Contact = () => {
                      <button type="submit" value="Submit" onClick={(e) => handleSubmit(e)} > Submit </button>
                 </form>
             </FormBody>
-            <div>
-                <div>
+            <Info>
+                <InfoHours>
                     <HourHeaderMain>
                         <h2>HOURS</h2>
                     </HourHeaderMain>
@@ -108,11 +112,11 @@ const Contact = () => {
                     <a href="https://www.facebook.com/people/Booyah-Bagels/100091819339135/"><SocialLogos src='/Facebook.avif' alt="facebook Logo"/></a>
                      <a href="https://www.instagram.com/booyahbagels/"><SocialLogos src='/Instagram.avif' alt="instagram Logo"/></a>
                      <a href="https://www.tiktok.com/@booyahbagels"><SocialLogos src='/TikTok.avif' alt="tiktok Logo"/></a>
-                </div>
-                <div>
-                    <p>#180 - 5441 45 ST | RED DEER, AB | T4N 1L2</p>
-                </div>
-            </div>
+                </InfoHours>
+                <InfoLoc>
+                    <Address>#180 - 5441 45 ST | RED DEER, AB | T4N 1L2</Address>
+                </InfoLoc>
+            </Info>
         </BodyContainer>
     )
 }
