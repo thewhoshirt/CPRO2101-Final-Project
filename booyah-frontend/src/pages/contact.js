@@ -25,7 +25,9 @@ const Contact = () => {
             phone,
             notes
         );
-        alert(`Thank you for contacting us ${Name}!`)
+        if(Name.length != 0){
+            alert(`Thank you for contacting us ${Name}!`)
+        }
     };
     const handleReset = () => {
         setName("");
@@ -80,7 +82,6 @@ const Contact = () => {
                      />
                      <br/>
                      <button type="submit" value="Submit" onClick={(e) => handleSubmit(e)} > Submit </button>
-                     <button type="reset" value="reset" onClick={() => handleReset()} > Reset </button>
                 </form>
             </FormBody>
             <div>
