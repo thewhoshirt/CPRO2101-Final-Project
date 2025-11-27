@@ -14,13 +14,20 @@ import {
     Address,
     InfoHours,
     InfoLoc,
+    MapContainer,
 } from "../styles/ContactElements";
+import {Map, Marker, APIProvider} from "@vis.gl/react-google-maps";
+
 import { Form } from "react-router-dom";
 const Contact = () => {
     const [Name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [notes, setNotes] = useState("");
+    const [markerLocation, setMarkerLocation] = useState({
+            lat:52.264775,
+            lng:-113.825777
+        });
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(
@@ -38,8 +45,12 @@ const Contact = () => {
         setEmail("");
         setPhone("");
         setNotes("");
+    };  
+    
+    const CustomMap = () =>{
+        
     };
-    return(
+     return(
         <BodyContainer>
             <BooyahLogo src="Booyah Assets/Logo Horizontal/Bi-Color/Web/BooyahBagels-Logo-Horizontal-Windbreaker and pretty in pink.png" alt="Booyah Logo"/>
             <FormBody>
@@ -115,6 +126,20 @@ const Contact = () => {
                 </InfoHours>
                 <InfoLoc>
                     <Address>#180 - 5441 45 ST | RED DEER, AB | T4N 1L2</Address>
+                    <MapContainer>
+                        <APIProvider apiKey={process.env.REACT_APP_Google_Api}>
+                            <Map
+                                style={{ borderRadius: "20px" }}
+                                defaultZoom={13}
+                                defaultCenter={markerLocation}
+                                gestureHandling={"greedy"}
+                                disableDefaultUI
+                            >
+                            <Marker position={markerLocation} />
+
+                            </Map>
+                        </APIProvider>
+                    </MapContainer>
                 </InfoLoc>
             </Info>
         </BodyContainer>
