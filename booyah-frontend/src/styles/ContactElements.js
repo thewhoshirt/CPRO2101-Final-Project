@@ -69,3 +69,11 @@ export const InfoLoc = styled.div`
     width: 50%;
     margin: 0 auto;
 `
+
+export const MapContainer = styled.div`
+    height: 500px;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 0 auto;
+`;
