@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"; 
-import { Image, BodyContainer, Div, ProductHeading1, ProductHeading2 } from "../styles/MenuElements";
+import { Image, BodyContainer, MenuHeading, Div, ProductHeading1, ProductHeading2, TextDiv } from "../styles/MenuElements";
 
 const Menu = () => {
     const [products, setProducts] = useState([]);
@@ -28,7 +28,7 @@ const Menu = () => {
             
             <Div>
                 <Image src="Booyah Assets/Brand images/Zakk with bagels.jpg" alt="Zakk with bagels" />
-                <div>
+                <MenuHeading>
                     <h1>Menu</h1>
                     <p>What's at Booyah Bagels, you ask?</p>
                     <p>Bagels that will make your taste buds do a happy dance! Every bite is a crafty blend of natural, thoughtfully-sourced ingredients, baked to perfection. Our NY-inspired bagels are crispy on the outside, chewy on the inside.</p>
@@ -41,11 +41,11 @@ const Menu = () => {
                         <li>Microgreens from the <b>Red Deer Food Bank Society</b></li>
                         <li>Meats + cheeses from <b>Nossack Food Group</b></li>
                     </ul>
-                </div>
+                </MenuHeading>
             </Div>
             <Div>
                 <Image src="Booyah Assets/Brand images/Box of bagels.jpg" alt="Bagel close up" />
-                <div>
+                <TextDiv>
                     <ProductHeading1>Bagels</ProductHeading1>
                     <ProductHeading2>Single bagel | Sleeve of 5 bagels | Box of 15 bagels + 3 tubs of cream cheese</ProductHeading2>
                 
@@ -62,13 +62,13 @@ const Menu = () => {
                     ) : (
                         !loading && <p>No Bagels available</p>
                     )}
-                </div>
+                </TextDiv>
             </Div>
             <Div>
-                <div>
+                <TextDiv>
                     <ProductHeading1>Spreads</ProductHeading1>
-                    <ProductHeading2>Cream cheeses prepared in-house
-                        Other: peanut butter |  jam | nutella | honey</ProductHeading2>
+                    <ProductHeading2>Cream cheeses prepared in-house</ProductHeading2>
+                       <ProductHeading2>Other: peanut butter |  jam | nutella | honey</ProductHeading2>
                     {loading && <p>Loading spreads...</p>}
                     {error && <p style={{color: 'red'}}>Error: {error}</p>}
                     {products.length > 0 ? (
@@ -82,9 +82,16 @@ const Menu = () => {
                     ) : (
                         !loading && <p>No Spreads available</p>
                     )}
-                </div>
+                </TextDiv>
                 <Image src="Booyah Assets\Stock images\SpreadBagels-Stock-Imagery15.jpg" alt="Cream cheese close up" />
-
+            </Div>
+            <Div>
+                <Image src="Booyah Assets/Brand images/Cold brew.jpg" alt="Booyah Bagels Cold Brew" />
+                <TextDiv>
+                    <ProductHeading1>Announcements</ProductHeading1>
+                    <ProductHeading2>Important announcements and seasonal flavours</ProductHeading2>
+                    <p>...</p>
+                </TextDiv>
             </Div>
             
         </BodyContainer>
