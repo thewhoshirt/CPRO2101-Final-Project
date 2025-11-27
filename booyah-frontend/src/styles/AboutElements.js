@@ -8,6 +8,11 @@ export const BodyContainer = styled.div`
 
 export const BooyahLogo = styled.img`
     width: 20%;
+
+    @media (max-width: 768px) {
+        width: 80%;
+        margin-bottom: 5%;
+    }
 `;
 
 export const Heading = styled.div`
@@ -17,6 +22,12 @@ export const Heading = styled.div`
     margin-bottom: 5%;
     margin-left: 3%;
     width: 90%;
+    padding: 5%;
+
+    @media (max-width: 768px) {
+        display: block;
+        margin-bottom: 0%;
+    }
 `;
 
 export const HeadingText = styled.div`
@@ -30,6 +41,16 @@ export const PinkHeading = styled.h2`
     padding: 10px;
 `;
 
+export const BlueHeading = styled.h3`
+    color: #0057E2;
+    padding: 10px;
+`;
+
+export const PinkText = styled.p`
+    color: #FF5FBE;
+`;
+
+
 export const IntroText = styled.div`
     background-color: #C9F2DE;
     padding: 2%;
@@ -40,18 +61,30 @@ export const Image = styled.img`
     width: 50%;
     height: 100%;
     border: solid black 2px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `;
 
 export const PillarsDiv = styled.div`
     height: fit-content;
     display: flex;
     justify-content: center;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
 `;
 
 export const PurposeDiv = styled.div`
     height: fit-content;
     display: flex;
     justify-content: center;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
 `;
 
 export const AboutPillars = styled.div`
