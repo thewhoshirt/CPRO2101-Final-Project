@@ -18,7 +18,7 @@ export const Image = styled.img`
     width: 35%;
 
     @media screen and (max-width: 768px) {
-        width: 80%;
+        width: 100%;
         }
 `;
 
