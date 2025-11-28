@@ -24,27 +24,52 @@ const Contact = () => {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [notes, setNotes] = useState("");
+    const [errors, setErrors] = useState({ name: "", email: "", phone: "", notes: "" });
     const [markerLocation, setMarkerLocation] = useState({
             lat:52.264775,
-            lng:-113.825777
+            lng:-113.825777,
+            msg: "Booyah Bagels"
         });
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(
-            Name,
-            email,
-            phone,
-            notes
-        );
-        if(Name.length != 0){
-            alert(`Thank you for contacting us ${Name}!`)
+        let formErrors = { name: "", email: "", phone: "", notes: "" };
+        let isValid = true;
+
+        if (Name.trim() === "") {
+            formErrors.name = "Name is required.";
+            isValid = false;
         }
-    };
-    const handleReset = () => {
+        if (email.trim() === "") {
+            formErrors.email = "Email is required.";
+            isValid = false;
+        }
+        if (phone.trim() === "") {
+            formErrors.phone = "Phone is required.";
+            isValid = false;
+        }
+        if (notes.trim() === "") {
+            formErrors.notes = "Notes are required.";
+            isValid = false;
+        }
+
+        if (!isValid) {
+            setErrors(formErrors);
+            return;
+        }
+
+        console.log(Name, email, phone, notes);
+        alert(`Thank you for contacting us, ${Name}!`);
+        
         setName("");
         setEmail("");
         setPhone("");
         setNotes("");
+        setErrors({
+            name: "",
+            email: "",
+            phone: "",
+            notes: ""
+        });
     };  
     
     const CustomMap = () =>{
@@ -65,6 +90,7 @@ const Contact = () => {
                          placeholder="Name"
                          required
                      />
+                     {errors.name && <div style={{ color: 'red' }}>{errors.name}</div>}
                      <br/>
                      <Input
                          type="email"
@@ -75,6 +101,7 @@ const Contact = () => {
                          placeholder="Email"
                          required
                      />
+                     {errors.email && <div style={{ color: 'red' }}>{errors.email}</div>}
                      <br/>
                      <Input
                          type="tel"
@@ -85,6 +112,7 @@ const Contact = () => {
                          placeholder="Phone"
                          required
                      />
+                     {errors.phone && <div style={{ color: 'red' }}>{errors.phone}</div>}
                      <br/>
                      <TextArea
                          type="text"
@@ -95,6 +123,7 @@ const Contact = () => {
                          placeholder='Notes'
                          required
                      />
+                     {errors.notes && <div style={{ color: 'red' }}>{errors.notes}</div>}
                      <br/>
                      <button type="submit" value="Submit" onClick={(e) => handleSubmit(e)} > Submit </button>
                 </form>
@@ -130,10 +159,11 @@ const Contact = () => {
                         <APIProvider apiKey={process.env.REACT_APP_Google_Api}>
                             <Map
                                 style={{ borderRadius: "20px" }}
-                                defaultZoom={13}
+                                defaultZoom={19}
                                 defaultCenter={markerLocation}
                                 gestureHandling={"greedy"}
                                 disableDefaultUI
+                                msg="booyah Bagels"
                             >
                             <Marker position={markerLocation} />
 
