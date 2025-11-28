@@ -15,10 +15,14 @@ import {
     InfoHours,
     InfoLoc,
     MapContainer,
+    Heading,
+    BooyahGraphic2,
+    BooyahGraphic1
 } from "../styles/ContactElements";
 import {Map, Marker, APIProvider} from "@vis.gl/react-google-maps";
 
 import { Form } from "react-router-dom";
+import { Graphic1 } from "../styles/HomeElements";
 const Contact = () => {
     const [Name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -77,7 +81,11 @@ const Contact = () => {
     };
      return(
         <BodyContainer>
-            <BooyahLogo src="Booyah Assets/Logo Horizontal/Bi-Color/Web/BooyahBagels-Logo-Horizontal-Windbreaker and pretty in pink.png" alt="Booyah Logo"/>
+            <Heading>
+                <BooyahGraphic1 src="Booyah Assets/Graphics/Squiggle11_Windbreaker.png" alt="Squiggle"/>
+                <BooyahLogo src="Booyah Assets/Logo Horizontal/Bi-Color/Web/BooyahBagels-Logo-Horizontal-Windbreaker and pretty in pink.png" alt="Booyah Logo"/>
+                <BooyahGraphic2 src="Booyah Assets/Graphics/Squiggle02_Sunshine.png" alt="Squiggle"/>
+            </Heading>
             <FormBody>
             <h1>Contact</h1>
                 <form>
