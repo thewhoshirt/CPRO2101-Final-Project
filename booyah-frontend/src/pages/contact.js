@@ -31,8 +31,7 @@ const Contact = () => {
     const [errors, setErrors] = useState({ name: "", email: "", phone: "", notes: "" });
     const [markerLocation, setMarkerLocation] = useState({
             lat:52.264775,
-            lng:-113.825777,
-            msg: "Booyah Bagels"
+            lng:-113.825777
         });
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -171,7 +170,6 @@ const Contact = () => {
                                 defaultCenter={markerLocation}
                                 gestureHandling={"greedy"}
                                 disableDefaultUI
-                                msg="booyah Bagels"
                             >
                             <Marker position={markerLocation} />
 
