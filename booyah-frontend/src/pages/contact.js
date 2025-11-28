@@ -26,7 +26,8 @@ const Contact = () => {
     const [notes, setNotes] = useState("");
     const [markerLocation, setMarkerLocation] = useState({
             lat:52.264775,
-            lng:-113.825777
+            lng:-113.825777,
+            msg: "Booyah Bagels"
         });
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -130,10 +131,11 @@ const Contact = () => {
                         <APIProvider apiKey={process.env.REACT_APP_Google_Api}>
                             <Map
                                 style={{ borderRadius: "20px" }}
-                                defaultZoom={13}
+                                defaultZoom={19}
                                 defaultCenter={markerLocation}
                                 gestureHandling={"greedy"}
                                 disableDefaultUI
+                                msg="booyah Bagels"
                             >
                             <Marker position={markerLocation} />
 
