@@ -40,3 +40,7 @@ export const ListItems = styled.li`
     margin-bottom: 5px;
     margin-left: 10%;
 `
+export const Headers = styled.h1`
+    text-align: left;
+    margin-left: 10%;
+`

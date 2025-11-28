@@ -6,7 +6,8 @@ import {
     TextArea,
     BooyahLogo,
     List,
-    ListItems
+    ListItems,
+    Headers
 } from "../styles/PreorderElements";
 function PreorderForm(){
     const [Name, setName] = useState("");
@@ -72,7 +73,7 @@ function PreorderForm(){
                      <ListItems>Please note we do have a maximum number of bagels we can allocate to pre-orders per day. If required, we will contact you to go over details and availability before the order is complete.</ListItems>
                      <ListItems>If you need to cancel an order, it must be done prior to 2:00 PM the day before pick up. All orders cancelled after the cut off will not be refunded</ListItems>
                  </List>
-                 <h1>Pre order</h1>
+                 <Headers>Your info</Headers>
                  <form>
                       <Input
                           type="text"
@@ -129,6 +130,7 @@ function PreorderForm(){
                       />
                       {errors.date && <div style={{ color: 'red' }}>{errors.date}</div>}
                       <br/>
+                      <Headers>Your order</Headers>
                       <button type="submit" value="Submit" onClick={(e) => handleSubmit(e)} > Submit </button>
                     </form>
                 </FormBody>
