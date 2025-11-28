@@ -45,5 +45,6 @@ export const Headers = styled.h1`
     margin-left: 10%;
 `
 export const Selector = styled.select`
-    margin-right: 73%
+    margin-right: 58%;
+    width: 22%;
 `
