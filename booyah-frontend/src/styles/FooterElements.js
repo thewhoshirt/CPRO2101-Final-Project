@@ -13,6 +13,7 @@ export const FooterContainer = styled.div`
     
         display: block;
         height: fit-content;
+        padding-bottom: 10px;
     }
 `;
 

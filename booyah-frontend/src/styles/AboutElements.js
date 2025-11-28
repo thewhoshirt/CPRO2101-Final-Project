@@ -4,6 +4,7 @@ export const BodyContainer = styled.div`
     text-align: center;
     background-color: #FCFAF2;
     position: relative;
+    width: fit-content;
 `;
 
 export const BooyahLogo = styled.img`
@@ -19,14 +20,11 @@ export const Heading = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-bottom: 5%;
-    margin-left: 3%;
     width: 90%;
     padding: 5%;
 
     @media (max-width: 768px) {
         display: block;
-        margin-bottom: 0%;
     }
 `;
 
