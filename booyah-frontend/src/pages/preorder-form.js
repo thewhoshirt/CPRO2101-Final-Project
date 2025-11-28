@@ -152,9 +152,11 @@ function PreorderForm(){
                       <Headers>Your order</Headers>
                       <Selector id="productSelect">
                           <option value="Initial">Add a product</option>
-                          {products.map((product) => (
+                          <option value="Box">Box of bagels</option>
+                          <option value="Sleeve">Sleeve of bagels</option>
+                          {products.filter(product => product.ProductName.includes('Cream Cheese')).map((product) => (
                             <option key={product.id} value={product.ProductPrice}>{product.ProductName}</option>
-                          ))}
+                          ))};
                       </Selector>
                       <br/>
                       <button type="submit" value="Submit" onClick={(e) => handleSubmit(e)} > Submit </button>
