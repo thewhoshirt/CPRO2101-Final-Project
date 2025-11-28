@@ -44,3 +44,6 @@ export const Headers = styled.h1`
     text-align: left;
     margin-left: 10%;
 `
+export const Selector = styled.select`
+    margin-right: 73%
+`

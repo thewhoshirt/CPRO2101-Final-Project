@@ -7,7 +7,8 @@ import {
     BooyahLogo,
     List,
     ListItems,
-    Headers
+    Headers,
+    Selector
 } from "../styles/PreorderElements";
 function PreorderForm(){
     const [Name, setName] = useState("");
@@ -131,6 +132,12 @@ function PreorderForm(){
                       {errors.date && <div style={{ color: 'red' }}>{errors.date}</div>}
                       <br/>
                       <Headers>Your order</Headers>
+                      <Selector>
+                          <option value="someOption">Add a product</option>
+                          <option value="someOption">Some option</option>
+                          <option value="otherOption">Other option</option>
+                      </Selector>
+                      <br/>
                       <button type="submit" value="Submit" onClick={(e) => handleSubmit(e)} > Submit </button>
                     </form>
                 </FormBody>
