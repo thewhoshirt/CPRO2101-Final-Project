@@ -23,6 +23,11 @@ export const Graphic2 = styled.img`
 export const Image = styled.img`
     padding: 2% 7%;
     width:14%;
+
+    @media screen and (max-width: 768px) {
+        padding: 2% 2%;
+        width: 25%;
+    }
 `;
 
 export const ImageDiv = styled.div`
