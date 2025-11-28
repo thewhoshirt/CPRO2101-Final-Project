@@ -71,9 +71,9 @@ export const InfoLoc = styled.div`
 `
 
 export const MapContainer = styled.div`
-    height: 500px;
+    height: 505px;
     width: 100%;
     border: 2px solid black;
-    border-radius: 20px;
+    border-radius: 2px;
     margin: 0 auto;
 `;
