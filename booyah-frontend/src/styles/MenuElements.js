@@ -34,7 +34,6 @@ export const Div = styled.div`
 
     @media screen and (max-width: 768px) {
         display: block;
-        justify-content: center;
     }
 `;
 
