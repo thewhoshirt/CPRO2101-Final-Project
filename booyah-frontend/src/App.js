@@ -11,6 +11,7 @@ import Contact from './pages/contact';
 import About from './pages/about.js';
 import PreorderForm from './pages/preorder-form.js'
 import Menu from './pages/menu.js';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -22,8 +23,8 @@ function App() {
         <Route path='/menu' element={<Menu />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/pre-order' element={<PreorderForm/>}/>
-
       </Routes>
+      <Footer />
     </Router>
 
   );

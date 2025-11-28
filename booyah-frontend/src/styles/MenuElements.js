@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const BodyContainer = styled.div`
     text-align: center;
     background-color: #FCFAF2;
+    padding-bottom: 20px;
 `;
 
 export const MenuHeading = styled.div`
