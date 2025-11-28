@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     BodyContainer,
     FormBody,
@@ -17,6 +17,24 @@ function PreorderForm(){
     const [date, setDate] = useState("");
     const [notes, setNotes] = useState("");
     const [errors, setErrors] = useState({ name: "", email: "", phone: "", date: "", notes: "" });
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/api/products');
+                if (!response.ok) throw new Error('Failed to fetch products');
+                const data = await response.json();
+                setProducts(data);
+            } 
+            catch (err) {
+                console.log(err.message);
+            }
+        };
+        fetchProducts();
+    }, []);
+
+    console.log(products);
     const handleSubmit = (e) => {
         e.preventDefault();
         let formErrors = { name: "", email: "", phone: "", date: "", notes: "" };
@@ -132,10 +150,11 @@ function PreorderForm(){
                       {errors.date && <div style={{ color: 'red' }}>{errors.date}</div>}
                       <br/>
                       <Headers>Your order</Headers>
-                      <Selector>
-                          <option value="someOption">Add a product</option>
-                          <option value="someOption">Some option</option>
-                          <option value="otherOption">Other option</option>
+                      <Selector id="productSelect">
+                          <option value="Initial">Add a product</option>
+                          {products.map((product) => (
+                            <option key={product.id} value={product.ProductPrice}>{product.ProductName}</option>
+                          ))}
                       </Selector>
                       <br/>
                       <button type="submit" value="Submit" onClick={(e) => handleSubmit(e)} > Submit </button>
