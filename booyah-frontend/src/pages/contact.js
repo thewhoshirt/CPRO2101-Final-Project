@@ -43,11 +43,11 @@ const Contact = () => {
             formErrors.name = "Name is required.";
             isValid = false;
         }
-        if (email.trim() === "") {
+        if (email.trim() === "" || !email.match(/^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/gm)) {
             formErrors.email = "Email is required.";
             isValid = false;
         }
-        if (phone.trim() === "") {
+        if (phone.trim() === "" || !phone.match(/^(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$/)) {
             formErrors.phone = "Phone is required.";
             isValid = false;
         }
