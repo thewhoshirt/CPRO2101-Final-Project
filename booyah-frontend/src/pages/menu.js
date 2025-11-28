@@ -34,7 +34,7 @@ const Menu = () => {
                     <p>Bagels that will make your taste buds do a happy dance! Every bite is a crafty blend of natural, thoughtfully-sourced ingredients, baked to perfection. Our NY-inspired bagels are crispy on the outside, chewy on the inside.</p>
                     <p>Our sourdough bagels are produced with a unique process using flour without bleaching agents or bromides. We source our ingredients locally when possible.</p>
                     <p>Here are some of our incredible local vendors:</p>
-                    <ul>
+                    <ul style={{listStyleType:'none'}}>
                         <li>Coffee + cold brew from <b>Dose Coffee Co.</b></li>
                         <li>Kombucha from <b>Wild Brewing Co</b></li>
                         <li>Chai from <b>Chai Wallahs</b></li>
@@ -52,7 +52,7 @@ const Menu = () => {
                     {loading && <p>Loading bagels...</p>}
                     {error && <p style={{color: 'red'}}>Error: {error}</p>}
                     {products.length > 0 ? (
-                        <ul>
+                        <ul style={{listStyleType:'none'}}>
                             {products.filter(product => !product.ProductName.includes('Cream Cheese')).map((product) => (
                                 <li key={product._id}>
                                     <strong>{product.ProductName}</strong> - ${product.ProductPrice.toFixed(2)}
@@ -72,7 +72,7 @@ const Menu = () => {
                     {loading && <p>Loading spreads...</p>}
                     {error && <p style={{color: 'red'}}>Error: {error}</p>}
                     {products.length > 0 ? (
-                        <ul>
+                        <ul style={{listStyleType:'none'}}>
                             {products.filter(product => product.ProductName.includes('Cream Cheese')).map((product) => (
                                 <li key={product._id}>
                                     <strong>{product.ProductName}</strong> - ${product.ProductPrice.toFixed(2)}
