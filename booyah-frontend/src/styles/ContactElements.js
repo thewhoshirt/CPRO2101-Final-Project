@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const BodyContainer = styled.div`
     text-align: center;
     background-color: #FCFAF2;
@@ -10,7 +11,7 @@ export const BodyContainer = styled.div`
 export const Heading = styled.div`
     display: flex;
     justify-content: space-around;
-    height:175px;
+    height: 143.5px;
 
     @media screen and (max-width: 768px) {
         display: block;
@@ -18,9 +19,13 @@ export const Heading = styled.div`
     }
 `;
 
+export const BooyahLogo = styled.img`
+    width: 468.5px;
+`;
+
 export const BooyahGraphic1 = styled.img`
     margin-top: 10px;
-    height: 300px;
+    height: 150%;
     width: 15%;
 
     @media screen and (max-width: 768px) {
@@ -30,7 +35,7 @@ export const BooyahGraphic1 = styled.img`
 
 export const BooyahGraphic2 = styled.img`
     margin-top: 80px;
-    height: 220px;
+    height: 120%;
     width: 15%;
 
     @media screen and (max-width: 768px) {
@@ -94,10 +99,6 @@ export const TextArea = styled.textarea`
     &:focus{
         outline: 2px solid #B275BB;
     }
-`;
-
-export const BooyahLogo = styled.img`
-    width: 35%;
 `;
 
 export const Info = styled.div`
