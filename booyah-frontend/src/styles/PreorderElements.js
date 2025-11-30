@@ -51,3 +51,7 @@ export const Selector = styled.select`
     margin-right: 58%;
     width: 22%;
 `
+export const Item = styled.div`
+    border: 1px solid black;
+    padding: 25px;
+`

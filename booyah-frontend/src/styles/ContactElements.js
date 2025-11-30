@@ -21,6 +21,9 @@ export const Heading = styled.div`
 
 export const BooyahLogo = styled.img`
     width: 468.5px;
+
+    @media screen and (max-width: 768px) {
+        width: 80%;
 `;
 
 export const BooyahGraphic1 = styled.img`
