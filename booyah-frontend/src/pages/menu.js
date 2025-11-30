@@ -1,11 +1,18 @@
-import React, { useState, useEffect } from "react"; 
-import { Image, BodyContainer, MenuHeading, Div, ProductHeading1, ProductHeading2, TextDiv } from "../styles/MenuElements";
-
+import React, { useState, useEffect } from "react"; // import required React functions
+import { Image, BodyContainer, MenuHeading, Div, ProductHeading1, ProductHeading2, TextDiv } from "../styles/MenuElements"; // import styled components from MenuElements file
 const Menu = () => {
+    /**
+     * Set the values for the variables used
+     */
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    /**
+     * Run the useEffect function when the page is loaded, this function will try to get the products from the backend via json at the specified route
+     * and then store the products in the products varaible.
+     * Otherwise set the error to the specified messsage which is display on the page.
+     * Finally the loading is set to false once a response either successful or not is recieved
+     */
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -19,10 +26,8 @@ const Menu = () => {
                 setLoading(false);
             }
         };
-
         fetchProducts();
     }, []);
-
     return(
         <BodyContainer>
             
@@ -48,9 +53,12 @@ const Menu = () => {
                 <TextDiv>
                     <ProductHeading1>Bagels</ProductHeading1>
                     <ProductHeading2>Single bagel | Sleeve of 5 bagels | Box of 15 bagels + 3 tubs of cream cheese</ProductHeading2>
-                
-                    {loading && <p>Loading bagels...</p>}
-                    {error && <p style={{color: 'red'}}>Error: {error}</p>}
+                    {loading && <p>Loading bagels...</p>} {/* set the text content to the specified message while the backend response is being fetched */}
+                    {error && <p style={{color: 'red'}}>Error: {error}</p>} {/* set the text content to the error if one is returned */}
+                    {/**
+                     * Check if the length of the products list is greater than 0, if true create an html list of the products with the name and price as the content
+                     * for the list item, filtering to only show the bagel products
+                     */}
                     {products.length > 0 ? (
                         <ul style={{listStyleType:'none'}}>
                             {products.filter(product => !product.ProductName.includes('Cream Cheese')).map((product) => (
@@ -59,9 +67,7 @@ const Menu = () => {
                                 </li>
                             ))}
                         </ul>
-                    ) : (
-                        !loading && <p>No Bagels available</p>
-                    )}
+                    ) : ( !loading && <p>No Bagels available</p>)} {/* if there was no error recieved from the backend but the products list is empty, show the specified message*/}
                 </TextDiv>
             </Div>
             <Div>
@@ -69,8 +75,12 @@ const Menu = () => {
                     <ProductHeading1>Spreads</ProductHeading1>
                     <ProductHeading2>Cream cheeses prepared in-house</ProductHeading2>
                        <ProductHeading2>Other: peanut butter |  jam | nutella | honey</ProductHeading2>
-                    {loading && <p>Loading spreads...</p>}
-                    {error && <p style={{color: 'red'}}>Error: {error}</p>}
+                    {loading && <p>Loading spreads...</p>} {/* set the text content to the specified message while the backend response is being fetched */}
+                    {error && <p style={{color: 'red'}}>Error: {error}</p>} {/* set the text content to the error if one is returned */}
+                    {/**
+                     * Check if the length of the products list is greater than 0, if true create an html list of the products with the name and price as the content
+                     * for the list item, filtering to only show the cream cheese products
+                     */}
                     {products.length > 0 ? (
                         <ul style={{listStyleType:'none'}}>
                             {products.filter(product => product.ProductName.includes('Cream Cheese')).map((product) => (
@@ -79,9 +89,7 @@ const Menu = () => {
                                 </li>
                             ))}
                         </ul>
-                    ) : (
-                        !loading && <p>No Spreads available</p>
-                    )}
+                    ) : ( !loading && <p>No Spreads available</p> )} {/* if there was no error recieved from the backend but the products list is empty, show the specified message*/}
                 </TextDiv>
                 <Image src="Booyah Assets\Stock images\SpreadBagels-Stock-Imagery15.jpg" alt="Cream cheese close up" />
             </Div>
@@ -93,9 +101,7 @@ const Menu = () => {
                     <p>...</p>
                 </TextDiv>
             </Div>
-            
         </BodyContainer>
     )
 };
-
 export default Menu;
