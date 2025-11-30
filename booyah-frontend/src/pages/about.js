@@ -1,4 +1,5 @@
 import React from 'react';
+// importing styled components to use on the about page
 import {
     BodyContainer,
     BooyahLogo,
@@ -17,6 +18,7 @@ import {
 
 const About = () => {
     return(
+        // returning the layout of the about page & text
         <BodyContainer>
             <Heading>
                 <BooyahLogo src="/Booyah Assets/GIFS/Rotating Booyah Blue.gif" alt="Booyah Logo"/>
