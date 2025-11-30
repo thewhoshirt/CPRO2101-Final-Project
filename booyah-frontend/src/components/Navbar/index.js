@@ -1,5 +1,5 @@
 /**
- * Import required React functions as well as the styled components from the navbarelements files
+ * Import required React functions as well as the styled components from the NavbarElements files
  */
 import React, { useState } from "react";
 import {
