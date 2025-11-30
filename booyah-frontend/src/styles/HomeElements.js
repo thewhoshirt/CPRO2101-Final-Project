@@ -26,7 +26,7 @@ export const Image = styled.img`
 
     @media screen and (max-width: 768px) {
         padding: 2% 2%;
-        width: 25%;
+        width: 20%;
     }
 `;
 

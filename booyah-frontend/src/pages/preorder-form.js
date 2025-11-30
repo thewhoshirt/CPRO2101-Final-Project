@@ -8,7 +8,8 @@ import {
     List,
     ListItems,
     Headers,
-    Selector
+    Selector,
+    Item
 } from "../styles/PreorderElements";
 
 function PreorderForm(){
@@ -108,6 +109,9 @@ function PreorderForm(){
             setErrors(formErrors);
             return;
         }
+
+        // If validation passes, show success alert
+        alert(`Thank you for your order, ${Name}! \n Your total is $${orderTotal.toFixed(2)}.`);
         
         // If validation passes, reset form
         setOrderItems([]);
@@ -299,7 +303,7 @@ function PreorderForm(){
                         if (item.orderType === 'Box' || item.orderType === 'Sleeve') {
                             return (
                                 // item for box or sleeve order
-                                <div key={item.id} >
+                                <Item key={item.id} >
                                     <strong>{item.orderType} of Bagels</strong>
                                     <span> - ${item.orderType === 'Box' ? '63.50' : item.orderType === 'Sleeve' ? '14.00' : ''}</span>
                                     <p>A total of {maxItems} bagels, and no more than 5 per flavour.</p>
@@ -354,18 +358,18 @@ function PreorderForm(){
                                     <div>   
                                         <button type="button" onClick={() => setOrderItems(prev => prev.filter(x => x.id !== item.id))}>Remove Item</button>
                                     </div>
-                                </div>
+                                </Item>
                             );
                         } else if (item.orderType.includes('Cream Cheese')) {
                             const creamCheese = products.find(p => p.ProductName === item.orderType);
                             return (
                                 // item for cream cheese order
-                                <div key={item.id} >
+                                <Item key={item.id} >
                                     <span><strong>{creamCheese ? creamCheese.ProductName : 'Cream Cheese'}</strong> - $8.75</span>
                                     <div>   
                                         <button type="button" onClick={() => setOrderItems(prev => prev.filter(x => x.id !== item.id))}>Remove Item</button>
                                     </div>
-                                </div>
+                                </Item>
                             );
                         }
                     return null;

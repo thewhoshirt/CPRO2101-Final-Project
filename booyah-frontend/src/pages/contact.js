@@ -46,7 +46,7 @@ const Contact = () => {
             formErrors.name = "Name is required.";
             isValid = false;
         }
-        if (email.trim() === "" || !email.match(/^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/gm)) {
+        if (email.trim() === "" || !email.match(/^[\w\-.]+@([\w-]+\.)+[\w-]{2,}$/gm)) {
             formErrors.email = "Email is required.";
             isValid = false;
         }
