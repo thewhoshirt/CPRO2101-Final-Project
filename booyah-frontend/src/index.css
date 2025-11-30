@@ -1,9 +1,16 @@
 @font-face {
-  font-family: 'Rosemary';
-  src: url('../public/Fonts/Rosemary/DroidSans.ttf') format('truetype');
+  font-family: 'Eighties-Comeback';
+  src: url('../public/Fonts/Eighties-Comeback/Eighties-Comeback/OTF/EightiesComeback\ It\ -\ Black\ Extra\ Condensed.otf') format('OpenType');
+}
+@font-face {
+  font-family: 'Chantal-Bold';
+  src: url('../public/Fonts/Chantal-Bold/Chantal\ Bold.ttf') format('TrueType');
 }
 
-
+/* @font-face{
+  font-family: ;
+}
+ */
 
 body {
   margin: 0;
@@ -12,10 +19,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
-  font-family: 'Rosemary', sans-serif;
+  font-family: 'Eighties-Comeback', sans-serif;
+}
+h2{
+  margin: 0;
+  font-family: 'Chantal-Bold', sans-serif;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
