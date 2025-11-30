@@ -1,6 +1,5 @@
-import React from "react";
-import { BodyContainer, BooyahLogo, Image, ImageDiv, Graphic1, Graphic2, PinkHeading, FAQ, Seperator } from "../styles/HomeElements";
-
+import React from "react"; // import React
+import { BodyContainer, BooyahLogo, Image, ImageDiv, Graphic1, Graphic2, PinkHeading, FAQ, Seperator } from "../styles/HomeElements"; // import styled components from HomeElements file
 const Home = () => {
    return( 
     <BodyContainer>
@@ -52,5 +51,4 @@ const Home = () => {
     </BodyContainer>
    );
 };
-
 export default Home;
