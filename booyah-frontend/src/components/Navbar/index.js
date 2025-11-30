@@ -1,3 +1,6 @@
+/**
+ * Import required React functions as well as the styled components from the navbarelements files
+ */
 import React, { useState } from "react";
 import {
     Nav,
@@ -6,18 +9,18 @@ import {
     NavMenu,
     MobileMenu,
 } from "../../styles/NavbarElements";
-
 const Navbar = () => {
+    /**
+     * Set the intial states for the navbar functions/variable
+     */
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
     const closeBurgerMenu = () => setClick(false);
-
     return (
         <>
             <Nav>
                 {/* burger icon toggles the mobile menu */}
                 <Bars onClick={handleClick} />
-
                 {/* Desktop menu (kept as-is) */}
                 <NavMenu>
                     <NavLink to="/">Home</NavLink>
@@ -26,7 +29,6 @@ const Navbar = () => {
                     <NavLink to="/contact">Contact</NavLink>
                     <NavLink to="/pre-order">Pre-Order</NavLink>
                 </NavMenu>
-
                 {/* Secondary mobile menu — visible when `click` is true */}
                 <MobileMenu className={click ? "active" : ""} onClick={closeBurgerMenu}>
                     <NavLink to="/" onClick={closeBurgerMenu}>
@@ -49,5 +51,4 @@ const Navbar = () => {
         </>
     );
 };
-
 export default Navbar;
