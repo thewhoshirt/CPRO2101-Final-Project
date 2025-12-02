@@ -35,10 +35,13 @@ export const BooyahLogo = styled.img`
 `
 export const List = styled.ul`
     text-align: left;
+    
 `
 export const ListItems = styled.li`
     margin-bottom: 5px;
-    margin-left: 10%;
+    margin-left: 3%;
+    margin-right: 3%;
+    
 `
 export const Headers = styled.h1`
     text-align: left;

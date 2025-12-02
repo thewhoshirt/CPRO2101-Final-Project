@@ -1,5 +1,15 @@
 import React from "react"; // import React
-import { BodyContainer, BooyahLogo, Image, ImageDiv, Graphic1, Graphic2, PinkHeading, FAQ, Seperator } from "../styles/HomeElements"; // import styled components from HomeElements file
+import { 
+        BodyContainer, 
+        BooyahLogo, 
+        Image, 
+        ImageDiv, 
+        Graphic1, 
+        Graphic2, 
+        PinkHeading, 
+        FAQ, 
+        Seperator 
+    } from "../styles/HomeElements"; // import styled components from HomeElements file
 const Home = () => {
    return( 
     <BodyContainer>
@@ -14,7 +24,7 @@ const Home = () => {
         <h1>RIDICULOUSLY DELICIOUS</h1>
         <Seperator>----------------------</Seperator>
         <FAQ>
-            <h1>Frequently Asked Questions</h1>
+            <h2 className="accentHeader">Frequently Asked Questions</h2>
             <div>
                 <PinkHeading>Q: What is a New York-style bagel?</PinkHeading>
                 <p>A:  Our bagels are New York inspired - we substitute the boiling stage by steam-injecting our bagels in our oven, however we use traditional NY bagel ingredients (including barley malt syrup). NY-style bagels are typically crispy on the outside and chewy on the inside!</p>

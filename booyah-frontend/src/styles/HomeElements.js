@@ -34,7 +34,7 @@ export const ImageDiv = styled.div`
     background-color:#CB85F9;
 `;
 
-export const PinkHeading = styled.h2`
+export const PinkHeading = styled.h3`
     color:#FF5FBE;
 `;
 

@@ -4,9 +4,10 @@ import styled from "styled-components";
 
 //nav bar 
 export const Nav = styled.nav`
-    background: #CB85F9;
+    background: #C9F2DE;
     height: 85px;
     display: flex;
+    width:
     justify-content: space-between;
     padding: 0.2rem calc((100vw - 1000px) / 2);
     z-index: 2;
@@ -29,7 +30,7 @@ export const NavLink = styled(Link)`
 // burger menu lines 
 export const Bars = styled(FaBars)`
     display: none;
-    color: #ce8282ff;
+    color: #0057E2;
     @media screen and (max-width: 768px) {
         display: block;
         position: absolute;
@@ -71,35 +72,34 @@ export const MobileMenu = styled.div`
             align-items: center;
             gap: 0.5rem;
             z-index: 1;
-
         }
     }
 `;
 
-export const NavBtn = styled.nav`
-    display: flex;
-    align-items: center;
-    margin-right: 24px;
-    @media screen and (max-width: 768px) {
-        display: none;
-    }
-`;
+// export const NavBtn = styled.nav`
+//     display: flex;
+//     align-items: center;
+//     margin-right: 24px;
+//     @media screen and (max-width: 768px) {
+//         display: none;
+//     }
+// `;
 
-export const NavBtnLink = styled(Link)`
-    border-radius: 4px;
-    background: #808080;
-    padding: 10px 22px;
-    color: #000000;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    text-decoration: none;
-    margin-left: 24px;
-    &:hover {
-        transition: all 0.2s ease-in-out;
-        background: #fff;
-        color: #808080;
-    }
-`;
+// export const NavBtnLink = styled(Link)`
+//     border-radius: 4px;
+//     background: #808080;
+//     padding: 10px 22px;
+//     color: #000000;
+//     outline: none;
+//     border: none;
+//     cursor: pointer;
+//     transition: all 0.2s ease-in-out;
+//     text-decoration: none;
+//     margin-left: 24px;
+//     &:hover {
+//         transition: all 0.2s ease-in-out;
+//         background: #fff;
+//         color: #808080;
+//     }
+// `;
 

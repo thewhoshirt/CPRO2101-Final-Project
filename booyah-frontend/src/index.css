@@ -1,24 +1,61 @@
+/*this font should be used for main header text */
 @font-face {
   font-family: 'Eighties-Comeback';
-  src: url('../public/Fonts/Eighties-Comeback/Eighties-Comeback/OTF/EightiesComeback\ It\ -\ Black\ Extra\ Condensed.otf') format('OpenType');
+  src: url('../public/Fonts/Eighties-Comeback/OTF/EightiesComeback\ -\ Light\ Extra\ Condensed.otf') format('OpenType');
 }
+
+/* this font should be used for the accent header text (short phrases that need
+to stand out) */
 @font-face {
   font-family: 'Chantal-Bold';
   src: url('../public/Fonts/Chantal-Bold/Chantal\ Bold.ttf') format('TrueType');
 }
 
-/* @font-face{
-  font-family: ;
+/* should be used for sub headings, always used in all caps with a
+tracking of 50 for print and 5% for web, and should never be used in
+lowercase*/
+@font-face{
+  font-family:'Interstate-bold';
+  src:url('../public/Fonts/Interstate-Bold/Interstate\ Bold.otf') format('OpenType');
 }
- */
+/* this font should be used for the body text */
+@font-face{
+  font-family: 'Lora';
+  src: url('../public/Fonts/Lora/static/Lora-Regular.ttf') format('TrueType');
+}
 
-body {
+
+h1{
   margin: 0;
+  margin-top: 5%;
   font-family: 'Eighties-Comeback', sans-serif;
+  line-height: .8;
+  font-size: 60px;
+  font-weight: lighter;
+
+}
+.accentHeader{
+  margin: 2%;
+  font-family: 'Chantal-Bold', sans-serif;
+  line-height: 1.1;
 }
 h2{
-  margin: 0;
-  font-family: 'Chantal-Bold', sans-serif;
+  font-size: 35px;
+}
+h3{
+  font-size: 20px;
+}
+h2, h3{
+  margin: 3%;
+  font-family: 'Interstate-bold', sans-serif;
+  letter-spacing: 5%;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+body, .lora{
+  margin: 1%;
+  font-family: 'Lora';
+  line-height: 1.25;
 }
 
 
