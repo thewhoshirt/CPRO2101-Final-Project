@@ -9,7 +9,7 @@ export const FormBody = styled.div`
     width: 90%;
     border: 3px solid #B275BB;
     margin: 0 auto;
-    background-color: #FCFAF2;
+    background-color: #eff5f2;
 `
 export const Input = styled.input`
     border: 1px solid black;
