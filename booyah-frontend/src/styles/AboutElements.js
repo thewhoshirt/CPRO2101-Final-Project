@@ -47,7 +47,7 @@ export const BlueHeading = styled.h3`
     padding: 10px;
 `;
 
-export const accentText = styled.p`
+export const AccentText = styled.p`
     color: #CB85F9;
     font-weight: bold;
 `;

@@ -67,7 +67,7 @@ export const MobileMenu = styled.div`
             right: 0;
             opacity: 1;
             transition: all 0.25s ease-in-out;
-            background: #CB85F9;
+            background: #C9F2DE;
             padding: 1rem 0;
             align-items: center;
             gap: 0.5rem;

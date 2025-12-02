@@ -13,7 +13,7 @@ import {
     PillarsDiv,
     AboutPillars,
     BlueHeading,
-    accentText
+    AccentText
 } from "../styles/AboutElements";
 
 const About = () => {
@@ -53,17 +53,17 @@ const About = () => {
                 <AboutPillars>
                     <PinkHeading className='accentHeader'>Our Pillars</PinkHeading>
                     <BlueHeading>STAY TRUE, BE INTENTIONAL, AND LET THE GOOD VIBES ROLL.</BlueHeading>
-                    <accentText>TRUE // Refreshingly real philosophy</accentText>
+                    <AccentText>TRUE // Refreshingly real philosophy</AccentText>
                     <p><b><em>Be any flavour you want to be.</em></b> Booyah Bagels runs a bold, no-BS business—because we believe showing up authentic makes for moments that keep you coming back for more. Cut the politics and performance…ours is a place built for belonging.</p>
-                    <accentText>VIBE // Ridiculously delicious experience</accentText>
+                    <AccentText>VIBE // Ridiculously delicious experience</AccentText>
                     <p><b><em>Come on in and take a beat.</em></b> Booyah Bagels is a one-of-a-kind community corner that's got buzzin' energy and bussin' bites. With the bar set high and the vibes higher, we're the local spot for anyone and everyone to connect over mutual cravings.</p>
-                    <accentText>INTENTION // Radically for the people connection</accentText>
+                    <AccentText>INTENTION // Radically for the people connection</AccentText>
                     <p><b><em>Find like-minded, no-fuss foodies.</em></b> Booyah Bagels cultivates long-term ties with transparent, no-surprise practices you can trust. Our bread and butter? Simple recipes, thoughtfully-sourced ingredients, and ecofriendly ops aligned to our unconventional outlook.</p>
                 </AboutPillars>
                 <Image src="/Booyah Assets/Brand images/moving bagels 2.jpg" alt="moving bagels"/>
             </PillarsDiv>
             <br />
-        </BodyContainer>
+         </BodyContainer>
     );
 };
 

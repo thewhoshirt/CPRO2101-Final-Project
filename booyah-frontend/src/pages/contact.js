@@ -90,8 +90,10 @@ const Contact = () => {
                 <BooyahGraphic2 src="Booyah Assets/Graphics/Squiggle02_Sunshine.png" alt="Squiggle"/>
             </Heading>
             <FormBody>
+            <br />
             <h1>Contact</h1>
             <br />
+            
                 {/* contact form   */}
                 <form>
                     {/* Each input follows similar logic, sets type, name, id, value and place holder text to the correct variable. on change the getter method takes the input value and changes the constant that is set at the beginning of the file. */}
@@ -142,6 +144,8 @@ const Contact = () => {
                      <br/>
                      {/* submits the responses from the user */}
                      <button type="submit" value="Submit" onClick={(e) => handleSubmit(e)} > Submit </button>
+                     <br />
+                     <br />
                 </form>
             </FormBody>
             <Info>

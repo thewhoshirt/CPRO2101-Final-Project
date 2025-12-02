@@ -207,13 +207,13 @@ function PreorderForm(){
                  <List>
                      <ListItems>We require a minimum 3 days' notice for all pre-orders. Pre-orders are for pick up only (no delivery option available).</ListItems>
                      <br />
-                     <ListItems>Pre-orders can be picked up during store hours after 8:00 AM on weekdays and after 10:00 AM on weekends. We are closed Tuesdays.</ListItems>
+                     <ListItems>Pre-orders can be picked up during store hours after <b style={{color:'#F9E44E'}}>8:00 AM</b> on weekdays and after <b style={{color:'#F9E44E'}} >10:00 AM</b> on weekends. We are closed Tuesdays.</ListItems>
                      <br />
                      <ListItems>Please note we do have a maximum number of bagels we can allocate to pre-orders per day. If required, we will contact you to go over details and availability before the order is complete.</ListItems>
                      <br />
                      <ListItems>If you need to cancel an order, it must be done prior to 2:00 PM the day before pick up. All orders cancelled after the cut off will not be refunded</ListItems>
                  </List>
-                 <Headers>Your info</Headers>
+                 <Headers>Your Info</Headers>
                  <br />
                  <form>
                       <Input
