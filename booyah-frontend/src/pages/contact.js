@@ -101,6 +101,7 @@ const Contact = () => {
             setEmail("");
             setPhone("");
             setNotes("");
+            setMoreNotes("");
             setErrors({
                 firstName: "",
                 lastName: "",
