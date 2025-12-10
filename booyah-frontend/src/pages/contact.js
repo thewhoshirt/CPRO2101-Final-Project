@@ -33,12 +33,13 @@ const Contact = () => {
     const [moreNotes, setMoreNotes] = useState("");
 
     const [errors, setErrors] = useState({ firstName: "",lastName:"", email: "", phone: "", notes: "", moreNotes:"" });
+    const [Contact, setContact] = useState([]);
     // setting the location marker for the map with latitude and longitude to show the location of the shop 
     const [markerLocation] = useState({
             lat:52.264775,
             lng:-113.825777
         });
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         // setting isValid to true, and formErrors as "". This way once the page loads the validation will read true until the user presses the submit button. It will then run the form validation checking errors or empty fields. 
         let formErrors = { firstName: "",lastName:"", email: "", phone: "", notes: "", moreNotes:"" };
@@ -75,24 +76,43 @@ const Contact = () => {
             setErrors(formErrors);
             return;
         }
-        // if isValid returns true the user gets an alert
-        console.log(FirstName,LastName, email, phone, notes);
-        alert(`Thank you for contacting us, ${FirstName}!`);
-        
-        // and the fields are reset to " "
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setPhone("");
-        setNotes("");
-        setMoreNotes("");
-        setErrors({
-            name: "",
-            email: "",
-            phone: "",
-            notes: "",
-            moreNotes: ""
-        });
+
+  try {
+            const res = await fetch('http://localhost:5000/api/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    firstName: FirstName,
+                    lastName: LastName,
+                    email,
+                    phone,
+                    notes,
+                    additionalNote: moreNotes
+                })
+            });
+            if (!res.ok) throw new Error('Failed to submit contact');
+            const saved = await res.json();
+            // optional: keep a local copy of submissions
+            setContact(prev => [saved, ...prev]);
+            alert(`Thank you for contacting us, ${FirstName}!`);
+            // reset fields
+            setFirstName("");
+            setLastName("");
+            setEmail("");
+            setPhone("");
+            setNotes("");
+            setErrors({
+                firstName: "",
+                lastName: "",
+                email: "",
+                phone: "",
+                notes: "",
+                moreNotes: ""
+            });
+        } catch (err) {
+            console.error('Submit error', err);
+            alert('There was a problem submitting your message. Please try again later.');
+        }
     };  
 
      return(
@@ -109,7 +129,7 @@ const Contact = () => {
             <br />
             
                 {/* contact form   */}
-                <form>
+                <form onSubmit={handleSubmit}>
                     {/* Each input follows similar logic, sets type, name, id, value and place holder text to the correct variable. on change the getter method takes the input value and changes the constant that is set at the beginning of the file. */}
                      <Input
                          type="text"
@@ -121,7 +141,7 @@ const Contact = () => {
                          required
                      />
                      {/* if there are any errors this will display the error message under the corresponding field */}
-                     {errors.name && <div style={{ color: 'red' }}>{errors.firstName}</div>}
+                     {errors.firstName && <div style={{ color: 'red' }}>{errors.firstName}</div>}
                      <br/>
                      {/* Each input follows similar logic, sets type, name, id, value and place holder text to the correct variable. on change the getter method takes the input value and changes the constant that is set at the beginning of the file. */}
                      <Input
@@ -134,7 +154,7 @@ const Contact = () => {
                          required
                      />
                      {/* if there are any errors this will display the error message under the corresponding field */}
-                     {errors.name && <div style={{ color: 'red' }}>{errors.lastName}</div>}
+                     {errors.lastName && <div style={{ color: 'red' }}>{errors.lastName}</div>}
                      <br/>
                      <Input
                          type="email"
@@ -174,14 +194,14 @@ const Contact = () => {
                          name="moreNotes"
                          id="moreNotes"
                          value={moreNotes}
-                         onChange={(e) => setNotes(e.target.value)}
-                         placeholder='Notes'
+                         onChange={(e) => setMoreNotes(e.target.value)}
+                         placeholder='More notes'
                          required
                      />
                      {errors.moreNotes && <div style={{ color: 'red' }}>{errors.moreNotes}</div>}
                      <br/>
                      {/* submits the responses from the user */}
-                     <button type="submit" value="Submit" onClick={(e) => handleSubmit(e)} > Submit </button>
+                     <button type="submit">Submit</button>
                      <br />
                      <br />
                 </form>
