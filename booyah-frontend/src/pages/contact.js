@@ -25,11 +25,12 @@ import {Map, Marker, APIProvider} from "@vis.gl/react-google-maps";
 
 const Contact = () => {
     // setting the constant and their setter methods. then using useState to initially set them as " "
-    const [Name, setName] = useState("");
+    const [FirstName, setFirstName] = useState("");
+    const [LastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [notes, setNotes] = useState("");
-    const [errors, setErrors] = useState({ name: "", email: "", phone: "", notes: "" });
+    const [errors, setErrors] = useState({ firstName: "",lastName:"", email: "", phone: "", notes: "" });
     // setting the location marker for the map with latitude and longitude to show the location of the shop 
     const [markerLocation] = useState({
             lat:52.264775,
@@ -38,12 +39,16 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // setting isValid to true, and formErrors as "". This way once the page loads the validation will read true until the user presses the submit button. It will then run the form validation checking errors or empty fields. 
-        let formErrors = { name: "", email: "", phone: "", notes: "" };
+        let formErrors = { firstName: "",lastName:"", email: "", phone: "", notes: "" };
         let isValid = true;
         
         // validation for name, email, phone and note fields: if empty, or if they so not follow the format an error message will show
-        if (Name.trim() === "") {
-            formErrors.name = "Name is required.";
+        if (FirstName.trim() === "") {
+            formErrors.firstName = "First name is required.";
+            isValid = false;
+        }
+        if (LastName.trim() === "") {
+            formErrors.lastName = "Last name is required.";
             isValid = false;
         }
         if (email.trim() === "" || !email.match(/^[\w\-.]+@([\w-]+\.)+[\w-]{2,}$/gm)) {
@@ -65,11 +70,12 @@ const Contact = () => {
             return;
         }
         // if isValid returns true the user gets an alert
-        console.log(Name, email, phone, notes);
-        alert(`Thank you for contacting us, ${Name}!`);
+        console.log(FirstName,LastName, email, phone, notes);
+        alert(`Thank you for contacting us, ${FirstName}!`);
         
         // and the fields are reset to " "
-        setName("");
+        setFirstName("");
+        setLastName("");
         setEmail("");
         setPhone("");
         setNotes("");
@@ -96,15 +102,28 @@ const Contact = () => {
                     {/* Each input follows similar logic, sets type, name, id, value and place holder text to the correct variable. on change the getter method takes the input value and changes the constant that is set at the beginning of the file. */}
                      <Input
                          type="text"
-                         name="name"
-                         id="name"
-                         value={Name}
-                         onChange={(e) => setName(e.target.value) }
-                         placeholder="Name"
+                         name="firstName"
+                         id="firstName"
+                         value={FirstName}
+                         onChange={(e) => setFirstName(e.target.value) }
+                         placeholder="First Name"
                          required
                      />
                      {/* if there are any errors this will display the error message under the corresponding field */}
-                     {errors.name && <div style={{ color: 'red' }}>{errors.name}</div>}
+                     {errors.name && <div style={{ color: 'red' }}>{errors.firstName}</div>}
+                     <br/>
+                     {/* Each input follows similar logic, sets type, name, id, value and place holder text to the correct variable. on change the getter method takes the input value and changes the constant that is set at the beginning of the file. */}
+                     <Input
+                         type="text"
+                         name="lastName"
+                         id="lastName"
+                         value={FirstName}
+                         onChange={(e) => setLastName(e.target.value) }
+                         placeholder="Last Name"
+                         required
+                     />
+                     {/* if there are any errors this will display the error message under the corresponding field */}
+                     {errors.name && <div style={{ color: 'red' }}>{errors.lastName}</div>}
                      <br/>
                      <Input
                          type="email"
