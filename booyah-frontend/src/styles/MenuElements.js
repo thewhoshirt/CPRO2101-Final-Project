@@ -17,9 +17,10 @@ export const MenuHeading = styled.div`
 
 export const Image = styled.img`
     width: 35%;
-
+    margin: 2%;
     @media screen and (max-width: 768px) {
-        width: 100%;
+        width: 90%;
+        margin: 2%;
         }
 `;
 

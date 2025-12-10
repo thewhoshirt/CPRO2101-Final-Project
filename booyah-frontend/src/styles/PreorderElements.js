@@ -7,6 +7,7 @@ export const BodyContainer = styled.div`
 export const FormBody = styled.div`
     text-align: center;
     width: 90%;
+    border: 3px solid #B275BB;
     margin: 0 auto;
     background-color: #eff5f2;
 `
@@ -35,10 +36,13 @@ export const BooyahLogo = styled.img`
 `
 export const List = styled.ul`
     text-align: left;
+    
 `
 export const ListItems = styled.li`
     margin-bottom: 5px;
-    margin-left: 10%;
+    margin-left: 3%;
+    margin-right: 3%;
+    
 `
 export const Headers = styled.h1`
     text-align: left;

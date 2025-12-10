@@ -9,8 +9,8 @@ const Menu = () => {
     const [error, setError] = useState(null);
     /**
      * Run the useEffect function when the page is loaded, this function will try to get the products from the backend via json at the specified route
-     * and then store the products in the products varaible.
-     * Otherwise set the error to the specified messsage which is display on the page.
+     * and then store the products in the products variable.
+     * Otherwise set the error to the specified message which is display on the page.
      * Finally the loading is set to false once a response either successful or not is recieved
      */
     useEffect(() => {
@@ -30,12 +30,12 @@ const Menu = () => {
     }, []);
     return(
         <BodyContainer>
-            
+            <br />
             <Div>
                 <Image src="Booyah Assets/Brand images/Zakk with bagels.jpg" alt="Zakk with bagels" />
                 <MenuHeading>
                     <h1>Menu</h1>
-                    <p>What's at Booyah Bagels, you ask?</p>
+                    <p className="accentHeader">What's at Booyah Bagels, you ask?</p>
                     <p>Bagels that will make your taste buds do a happy dance! Every bite is a crafty blend of natural, thoughtfully-sourced ingredients, baked to perfection. Our NY-inspired bagels are crispy on the outside, chewy on the inside.</p>
                     <p>Our sourdough bagels are produced with a unique process using flour without bleaching agents or bromides. We source our ingredients locally when possible.</p>
                     <p>Here are some of our incredible local vendors:</p>
@@ -67,7 +67,7 @@ const Menu = () => {
                                 </li>
                             ))}
                         </ul>
-                    ) : ( !loading && <p>No Bagels available</p>)} {/* if there was no error recieved from the backend but the products list is empty, show the specified message*/}
+                    ) : ( !loading && <p>No Bagels available</p>)} {/* if there was no error received from the backend but the products list is empty, show the specified message*/}
                 </TextDiv>
             </Div>
             <Div>
@@ -89,7 +89,7 @@ const Menu = () => {
                                 </li>
                             ))}
                         </ul>
-                    ) : ( !loading && <p>No Spreads available</p> )} {/* if there was no error recieved from the backend but the products list is empty, show the specified message*/}
+                    ) : ( !loading && <p>No Spreads available</p> )} {/* if there was no error received from the backend but the products list is empty, show the specified message*/}
                 </TextDiv>
                 <Image src="Booyah Assets\Stock images\SpreadBagels-Stock-Imagery15.jpg" alt="Cream cheese close up" />
             </Div>
@@ -98,7 +98,8 @@ const Menu = () => {
                 <TextDiv>
                     <ProductHeading1>Announcements</ProductHeading1>
                     <ProductHeading2>Important announcements and seasonal flavours</ProductHeading2>
-                    <p>...</p>
+                    <p>This months Seasonal Flavor is <em>Apple Cinnamon</em></p>
+                    <p>⋆꙳❅*❆Closing December 22nd till January 5th For the Holidays.⋆꙳❅*❆</p>
                 </TextDiv>
             </Div>
         </BodyContainer>

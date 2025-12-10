@@ -31,10 +31,10 @@ export const Image = styled.img`
 `;
 
 export const ImageDiv = styled.div`
-    background-color:#CB85F9;
+    background-color:#FF5FBE;
 `;
 
-export const PinkHeading = styled.h2`
+export const PinkHeading = styled.h3`
     color:#FF5FBE;
 `;
 
