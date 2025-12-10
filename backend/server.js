@@ -8,6 +8,9 @@ const { seedDatabase } = require('./seeder/seed');
 const app = express(); // tell the program to use express
 const PORT = process.env.PORT || 5000; // use the port specified in our env file otherwise use port 5000
 const productRoutes = require('./routes/productRoutes');
+
+const submitRoutes = require('./routes/submitRoutes');
+
 dotenv.config(); // tell the program to use the env file
 app.use(express.json()); // allow the program to send data as json
 /**
@@ -19,6 +22,9 @@ app.use((req, res, next) => {
 	next();
 });
 app.use('/api',productRoutes); // put the gathered database info at the /api/products endpoint
+
+app.use('/api',submitRoutes);
+
 /**
  * Function that runs when the backend program is started, this function tries to connect to the database
  * then it seeds the database and tells the user what port the program is listening on.
