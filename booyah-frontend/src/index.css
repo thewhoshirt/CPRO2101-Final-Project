@@ -54,7 +54,7 @@ h2, h3{
 }
 body, .lora{
   margin: 1%;
-  font-family: 'Lora';
+  font-family: 'Lora' , sans-serif;
   line-height: 1.25;
 }
 
