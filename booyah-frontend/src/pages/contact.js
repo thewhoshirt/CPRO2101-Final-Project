@@ -30,7 +30,9 @@ const Contact = () => {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [notes, setNotes] = useState("");
-    const [errors, setErrors] = useState({ firstName: "",lastName:"", email: "", phone: "", notes: "" });
+    const [moreNotes, setMoreNotes] = useState("");
+
+    const [errors, setErrors] = useState({ firstName: "",lastName:"", email: "", phone: "", notes: "", moreNotes:"" });
     // setting the location marker for the map with latitude and longitude to show the location of the shop 
     const [markerLocation] = useState({
             lat:52.264775,
@@ -39,7 +41,7 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // setting isValid to true, and formErrors as "". This way once the page loads the validation will read true until the user presses the submit button. It will then run the form validation checking errors or empty fields. 
-        let formErrors = { firstName: "",lastName:"", email: "", phone: "", notes: "" };
+        let formErrors = { firstName: "",lastName:"", email: "", phone: "", notes: "", moreNotes:"" };
         let isValid = true;
         
         // validation for name, email, phone and note fields: if empty, or if they so not follow the format an error message will show
@@ -63,6 +65,10 @@ const Contact = () => {
             formErrors.notes = "Notes are required.";
             isValid = false;
         }
+        if (moreNotes.trim() === "") {
+            formErrors.moreNotes = "More Notes are required.";
+            isValid = false;
+        }
         // if there are no errors the form submits, if not the isValid property is set to false and any of the fields that have errors display an error message 
 
         if (!isValid) {
@@ -79,11 +85,13 @@ const Contact = () => {
         setEmail("");
         setPhone("");
         setNotes("");
+        setMoreNotes("");
         setErrors({
             name: "",
             email: "",
             phone: "",
-            notes: ""
+            notes: "",
+            moreNotes: ""
         });
     };  
 
@@ -160,6 +168,17 @@ const Contact = () => {
                          required
                      />
                      {errors.notes && <div style={{ color: 'red' }}>{errors.notes}</div>}
+                     <br/>
+                     <TextArea
+                         type="text"
+                         name="moreNotes"
+                         id="moreNotes"
+                         value={moreNotes}
+                         onChange={(e) => setNotes(e.target.value)}
+                         placeholder='Notes'
+                         required
+                     />
+                     {errors.moreNotes && <div style={{ color: 'red' }}>{errors.moreNotes}</div>}
                      <br/>
                      {/* submits the responses from the user */}
                      <button type="submit" value="Submit" onClick={(e) => handleSubmit(e)} > Submit </button>
