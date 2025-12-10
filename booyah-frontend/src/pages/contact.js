@@ -120,7 +120,7 @@ const Contact = () => {
                          type="text"
                          name="lastName"
                          id="lastName"
-                         value={FirstName}
+                         value={LastName}
                          onChange={(e) => setLastName(e.target.value) }
                          placeholder="Last Name"
                          required
